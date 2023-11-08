@@ -1,5 +1,16 @@
 {
     "cSpell.words": [
         "ohmyfood"
+    ],
+    "liveSassCompile.settings.autoprefix": [
+
+    ],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/assets/css",
+            "savePathReplacementPairs": null
+        }
     ]
 }
