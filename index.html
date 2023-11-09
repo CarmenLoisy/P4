@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oh my food</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -59,7 +59,7 @@
               class="card__img"
             />
             <span class="card__badge">Nouveau</span>
-            <footer class="card__footer">
+            <div class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">La palette du goût</h3>
                 <span class="card__subtitle">Ménilmontant</span>
@@ -74,7 +74,7 @@
                   aria-hidden="true"
                 ></i>
               </div>
-            </footer>
+            </div>
           </a>
           <a class="card" href="/la-note-enchantee">
             <img
@@ -83,7 +83,7 @@
               class="card__img"
             />
             <span class="card__badge">Nouveau</span>
-            <footer class="card__footer">
+            <div class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">La note enchantée</h3>
                 <span class="card__subtitle">Charonne</span>
@@ -98,7 +98,7 @@
                   aria-hidden="true"
                 ></i>
               </div>
-            </footer>
+            </div>
           </a>
           <a class="card" href="/a-la-francaise">
             <img
@@ -106,7 +106,7 @@
               alt=""
               class="card__img"
             />
-            <footer class="card__footer">
+            <div class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">À la française</h3>
                 <span class="card__subtitle">Cité Rouge</span>
@@ -121,7 +121,7 @@
                   aria-hidden="true"
                 ></i>
               </div>
-            </footer>
+            </div>
           </a>
           <a class="card" href="/le-delice-des-sens">
             <img
@@ -129,7 +129,7 @@
               alt=""
               class="card__img"
             />
-            <footer class="card__footer">
+            <div class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">Le délice des sens</h3>
                 <span class="card__subtitle">Folie-Méricourt</span>
@@ -144,10 +144,38 @@
                   aria-hidden="true"
                 ></i>
               </div>
-            </footer>
+            </div>
           </a>
         </div>
       </section>
     </main>
+    <footer>
+        <a class="footer__logo" href="#">ohmyfood</a>
+        <ul class="footer__list">
+          <li class="footer__listElt">
+            <a class="footer__link" href="#"
+              ><i class="fa-utensils fas footer__icon" aria-hidden="true"></i
+              >Proposer un restaurant</a
+            >
+          </li>
+          <li class="footer__listElt">
+            <a class="footer__link" href="#"
+              ><i
+                class="fa-hands-helping fas footer__icon"
+                aria-hidden="true"
+              ></i
+              >Devenir partenaire</a
+            >
+          </li>
+          <li class="footer__listElt">
+            <a class="footer__link" href="#">Mentions légales</a>
+          </li>
+          <li class="footer__listElt">
+            <a class="footer__link" href="mailto:contact@ohmyfood.com"
+              >Contact</a
+            >
+          </li>
+        </ul>
+    </footer>
   </body>
 </html>

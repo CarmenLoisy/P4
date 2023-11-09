@@ -8,6 +8,11 @@ html {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+
+li, ul {
+  list-style: none;
 }
 
 h1,
@@ -63,7 +68,6 @@ main .hero .btn {
   border-radius: 100px;
   color: #fff;
   background-image: linear-gradient(0deg, #9356dc, #ff79da);
-  cursor: pointer;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.25s;
 }
@@ -82,7 +86,6 @@ main .steps ol {
 main .steps ol li {
   display: flex;
   gap: 20px;
-  list-style: none;
   position: relative;
   margin: 0 0 16px 2em;
   padding: 6px 18px;
@@ -126,8 +129,6 @@ main #restaurants .cards .card {
   background-color: white;
   border-radius: 1rem;
   position: relative;
-  text-decoration: none;
-  color: inherit;
   display: block;
 }
 main #restaurants .cards .card__img {
@@ -191,4 +192,45 @@ main #restaurants .cards .card__btn .fas {
 main #restaurants .cards .card__btn:hover .fas {
   opacity: 1;
   transform: translateY(-50%) scale(1.05);
-}/*# sourceMappingURL=style.css.map */
+}
+
+footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 25px;
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+  color: white;
+}
+footer .footer__logo {
+  font-family: "Shrikhand", "cursive";
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+footer .footer__list {
+  padding: 0;
+  margin: 0;
+}
+footer .footer__list .footer__listElt {
+  margin: 0.5rem 0;
+}
+footer .footer__list .footer__listElt:first-child {
+  margin-top: 0;
+}
+footer .footer__list .footer__listElt:last-child {
+  margin-bottom: 0;
+}
+footer .footer__list .footer__link {
+  color: white;
+  text-decoration: none;
+}
+footer .footer__list .footer__link:hover {
+  text-decoration: underline;
+}
+footer .footer__list .footer__icon {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=main.css.map */
