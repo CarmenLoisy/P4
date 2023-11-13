@@ -1,24 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
-@import "_variables";
-@import "_mixin";
-body,
-html {
-  margin: 0;
-  font-family: $texte;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-li, ul{
-  list-style: none;
-}
-h1,
-h2,
-h3 {
-  margin: 0;
-}
+@import "./_variables";
+@import "./_mixin";
+@import "./_base";
 header {
   padding: 1rem;
   box-shadow: $shadow;
@@ -29,222 +12,195 @@ header {
     text-align: center;
   }
 }
-main {
-  .location {
-    display: flex;
-    justify-content: center;
-    padding: 1.25rem 1rem;
-    background: $color-light-grey;
-    font-size: 1.2rem;
-    position: relative;
-    align-items: center;
-    gap: 17px;
+.location {
+  @include flexMid;
+  flex-direction: row;
+  padding: 1.25rem 1rem;
+  background: $color-light-grey;
+  font-size: 1.2rem;
+  position: relative;
+  color: $color-dark-grey;
+  h3 {
+    font-weight: 700;
+  }
+}
+.hero {
+  padding: 2rem;
+  text-align: center;
+  background-color: $color-neutre-bg;
+  @include flexMid;
+  gap: 2rem;
+  span {
+    font-weight: 300;
+    margin: 1.5rem 0;
     color: $color-dark-grey;
-    h3 {
-      font-weight: 700;
-    }
-  }
-  .hero {
-    padding: 2rem;
     text-align: center;
-    background-color: $color-neutre-bg;
-    span {
-      font-weight: 300;
-      margin: 1.5rem 0;
-      color: $color-dark-grey;
-      text-align: center;
-      font-size: 18px;
-    }
-    .btn {
-      font-family: $texte;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      border: 0;
-      padding: 0.75rem 1.5rem;
-      border-radius: 100px;
-      color: #fff;
-      background-image: $gradient;
-      box-shadow: $shadow;
-      transition: all 0.25s;
-      &:hover {
-        @include transform (scale(1.05));
-        opacity: 0.9;
-      }
-    }
+    font-size: 18px;
   }
-  .steps {
-    h2 {
-      padding: 20px;
-    }
-    ol {
-      counter-reset: li; /* Initiate a counter */
-      padding: 0 20px;
-      margin: 0;
-      li {
-        display: flex;
-        gap: 20px;
-        
-        position: relative;
-        margin: 0 0 16px 2em;
-        padding: 6px 18px;
-        border-radius: 20px;
-        background: #f6f6f6;
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-        align-items: center;
-        .step__icon {
-          color: #7e7e7e;
-        }
-        &:before {
-          content: counter(li); /* Use the counter as content */
-          counter-increment: li; /* Increment the counter by 1 */
-          background: $color-primary;
-          height: 1.5rem;
-          width: 1.5rem;
-          border-radius: 100px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          position: absolute;
-          left: -20px;
-          font-size: 14.182px;
-        }
-      }
-    }
+}
+.btn {
+  font-family: $texte;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius;
+  color: #fff;
+  background-image: $gradient;
+  box-shadow: $shadow;
+  transition: all 0.25s;
+  &:hover {
+    @include transform(scale(1.05));
+    opacity: 0.9;
   }
-  #restaurants {
-    padding: 2rem 1rem;
-    background-color: $color-neutre-bg;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      column-gap: 2rem;
-      row-gap: 2rem;
-      .card {
-        background-color: white;
-        border-radius: 1rem;
-        position: relative;
-        display: block;
-
-        &__img {
-          height: 12rem;
-          width: 100%;
-          border: transparent solid 0px;
-          border-radius: 1rem 1rem 0 0;
-          box-shadow: none;
-          object-fit: cover;
-        }
-
-        &__badge {
-          background-color: $color-tertiary;
-          color: darken($color-tertiary, 50%);
-          padding: 0.5rem;
-          border-radius: 0.125rem;
-          position: absolute;
-          top: 1rem;
-          right: 0.75rem;
-        }
-
-        &__footer {
-          padding: 1rem;
-          position: relative;
-          display: flex;
-          align-items: center;
-        }
-
-        &__content {
-          flex: 1;
-        }
-
-        &__title {
-          margin: 0;
-          margin-bottom: 0.25rem;
-        }
-
-        &__subtitle {
-          margin: 0;
-        }
-
-        &__btn {
-          height: 2rem;
-          width: 2rem;
-          background-color: transparent;
-          border: transparent 0px solid;
-          padding: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          i {
-            font-size: 2rem;
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            @include transform (translateY(-50%));
-          }
-          .fas {
-            color: transparent;
-            background-image: $gradient;
-            background-clip: text;
-            -webkit-background-clip: text;
-            opacity: 0;
-            transition: all 200ms;
-          }
-          &:hover .fas {
-            opacity: 1;
-            @include transform (translateY(-50%) scale(1.05));
-          }
-        }
+}
+.steps {
+  margin: 2rem;
+  h2 {
+    padding-bottom: 1rem;
+  }
+  ol {
+    counter-reset: li; /* Initiate a counter */
+    margin: 0;
+    padding: 0;
+    li {
+      @include flexMid;
+      justify-content: flex-start;
+      flex-direction: row;
+      position: relative;
+      margin: 0 0 16px 2em;
+      padding: 1.3rem 1rem;
+      border-radius: $border-radius;
+      background: #f6f6f6;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+      &:before {
+        content: counter(li); /* Use the counter as content */
+        counter-increment: li; /* Increment the counter by 1 */
+        background: $color-primary;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: $border-radius;
+        @include flexMid;
+        color: white;
+        position: absolute;
+        left: -20px;
+        font-size: 14.182px;
       }
     }
   }
 }
+.step__icon {
+  color: #7e7e7e;
+}
+#restaurants {
+  padding: 2rem 1rem;
+  background-color: $color-neutre-bg;
+  @include flexMid;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+.card {
+  border-radius: $border-radius;
+  overflow: overlay;
+  background-color: white;
+  position: relative;
+  display: block;
+  &__img {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__badge {
+    background-color: $color-tertiary;
+    color: darken($color-tertiary, 50%);
+    padding: 0.5rem;
+    border-radius:2px;
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem;
+  }
+
+  &__footer {
+    padding: 1rem;
+    position: relative;
+    @include flexMid;
+	flex-direction: row;
+
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+  }
+}
+.card__btn {
+  width: 2rem;
+  i {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+}
+.menu__like--bg {
+  color: transparent;
+  background-image: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms;
+  &:hover {
+    opacity: 1;
+    @include transform(translateY(-50%) scale(1.05));
+  }
+}
 footer {
   background-color: $color-dark-grey;
-  display: flex;
-  flex-direction: column;
+  @include flexMid;
   padding: 22px 25px;
   max-width: 1280px;
   margin: auto;
   position: relative;
   color: white;
-  .footer__logo {
-    font-family: $head-font;
-    margin: 0;
-    font-size: 18px;
-    margin-bottom: 1rem;
-  }
-  .footer__list {
-    
-    padding: 0;
-    margin: 0;
-  .footer__listElt {
-    margin: 0.5rem 0;
+  align-items: flex-start;
+}
+.footer__logo {
+  font-family: $head-font;
+  margin: 0;
+  font-size: 18px;
+}
+.footer__list {
+  padding: 0;
+  margin: 0;
+}
+.footer__listElt {
+  margin: 0.5rem 0;
 
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  &:first-child {
+    margin-top: 0;
   }
 
-  .footer__link {
-    color: white;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .footer__icon{
-    width: 1.2rem;
-    margin-right: 0.5rem;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
+.footer__link {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.footer__icon {
+  width: 1.2rem;
+  margin-right: 0.5rem;
 }

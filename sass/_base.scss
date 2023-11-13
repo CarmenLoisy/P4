@@ -1,0 +1,19 @@
+body,
+html {
+  margin: 0;
+  font-family: $texte;
+}
+h1,
+h2,
+h3, p {
+  margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+li,
+ul {
+  list-style: none;
+}
