@@ -2,6 +2,8 @@
 @import "./_variables";
 @import "./_mixin";
 @import "./_base";
+@import "./restaurants";
+@import "./animations";
 header {
   padding: 1rem;
   box-shadow: $shadow;
@@ -97,6 +99,7 @@ header {
   padding: 2rem 1rem;
   background-color: $color-neutre-bg;
   @include flexMid;
+  align-items: stretch;
 }
 .cards {
   display: grid;
