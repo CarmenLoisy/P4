@@ -65,10 +65,12 @@ main.menu_container {
 
 .menu__title {
   font-family: "Shrikhand", cursive, sans-serif;
+  font-weight: 100;
 }
 
 .submenus {
   display: grid;
+  gap: 2rem;
 }
 @media (min-width: 64rem) {
   .submenus {
@@ -86,7 +88,7 @@ main.menu_container {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 0.5rem;
-  font-weight: normal;
+  font-weight: 300;
 }
 .submenu__title::after {
   content: "";
@@ -105,13 +107,9 @@ main.menu_container {
   display: flex;
   border-radius: 0.75rem;
   margin: 1rem 0;
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   cursor: pointer;
-  animation: itemAppear 0.6s;
-  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-  animation-fill-mode: both;
-  transform: scale(0);
   max-width: 100%;
 }
 .menuItem:hover .menuItem__confirmation {
@@ -126,6 +124,13 @@ main.menu_container {
   text-overflow: ellipsis;
   overflow: hidden;
   flex: 1;
+}
+.menuItem__header h4 {
+  font-weight: 500;
+}
+.menuItem__header p {
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .menuItem__title {
@@ -175,6 +180,12 @@ main.menu_container {
   color: #99e2d0;
 }
 
+.order_button {
+  display: flex;
+  padding-bottom: 2.5rem;
+  justify-content: center;
+}
+
 @keyframes itemAppear {
   0% {
     transform: scale(0);
@@ -211,6 +222,7 @@ header {
 }
 header h1 {
   font-family: "Shrikhand", cursive, sans-serif;
+  font-weight: 100;
   text-align: center;
 }
 
@@ -228,7 +240,7 @@ header h1 {
   color: #353535;
 }
 .location h3 {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .hero {
@@ -251,12 +263,9 @@ header h1 {
 }
 
 .btn {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  border: 0;
-  padding: 0.75rem 1.5rem;
+  width: 11.625rem;
+  text-align: center;
+  padding: 1rem;
   border-radius: 1.5625rem;
   color: #fff;
   background-image: linear-gradient(0deg, #9356dc, #ff79da);
@@ -376,6 +385,10 @@ header h1 {
   margin-bottom: 0.25rem;
 }
 
+.card__subtitle {
+  font-weight: lighter;
+}
+
 .card__btn {
   width: 2rem;
 }
@@ -423,6 +436,7 @@ footer {
 
 .footer__logo {
   font-family: "Shrikhand", cursive, sans-serif;
+  font-weight: 100;
   margin: 0;
   font-size: 18px;
 }

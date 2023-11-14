@@ -5,205 +5,204 @@
 @import "./restaurants";
 @import "./animations";
 header {
-  padding: 1rem;
-  box-shadow: $shadow;
-  position: relative;
-  z-index: 1000;
-  h1 {
-    font-family: $head-font;
-    text-align: center;
-  }
+	padding: 1rem;
+	box-shadow: $shadow;
+	position: relative;
+	z-index: 1000;
+	h1 {
+		@include head-font;
+		text-align: center;
+	}
 }
 .location {
-  @include flexMid;
-  flex-direction: row;
-  padding: 1.25rem 1rem;
-  background: $color-light-grey;
-  font-size: 1.2rem;
-  position: relative;
-  color: $color-dark-grey;
-  h3 {
-    font-weight: 700;
-  }
+	@include flexMid;
+	flex-direction: row;
+	padding: 1.25rem 1rem;
+	background: $color-light-grey;
+	font-size: 1.2rem;
+	position: relative;
+	color: $color-dark-grey;
+	h3 {
+		font-weight: 500;
+	}
 }
 .hero {
-  padding: 2rem;
-  text-align: center;
-  background-color: $color-neutre-bg;
-  @include flexMid;
-  gap: 2rem;
-  span {
-    font-weight: 300;
-    margin: 1.5rem 0;
-    color: $color-dark-grey;
-    text-align: center;
-    font-size: 18px;
-  }
+	padding: 2rem;
+	text-align: center;
+	background-color: $color-neutre-bg;
+	@include flexMid;
+	gap: 2rem;
+	span {
+		font-weight: 300;
+		margin: 1.5rem 0;
+		color: $color-dark-grey;
+		text-align: center;
+		font-size: 18px;
+	}
 }
 .btn {
-  font-family: $texte;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  border: 0;
-  padding: 0.75rem 1.5rem;
-  border-radius: $border-radius;
-  color: #fff;
-  background-image: $gradient;
-  box-shadow: $shadow;
-  transition: all 0.25s;
-  &:hover {
-    @include transform(scale(1.05));
-    opacity: 0.9;
-  }
+	width: 11.625rem;
+    text-align: center;
+    padding: 1rem;
+	border-radius: $border-radius;
+	color: #fff;
+	background-image: $gradient;
+	box-shadow: $shadow;
+	transition: all 0.25s;
+	&:hover {
+		@include transform(scale(1.05));
+		opacity: 0.9;
+	}
 }
 .steps {
-  margin: 2rem;
-  h2 {
-    padding-bottom: 1rem;
-  }
-  ol {
-    counter-reset: li; /* Initiate a counter */
-    margin: 0;
-    padding: 0;
-    li {
-      @include flexMid;
-      justify-content: flex-start;
-      flex-direction: row;
-      position: relative;
-      margin: 0 0 16px 2em;
-      padding: 1.3rem 1rem;
-      border-radius: $border-radius;
-      background: #f6f6f6;
-      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-      &:before {
-        content: counter(li); /* Use the counter as content */
-        counter-increment: li; /* Increment the counter by 1 */
-        background: $color-primary;
-        height: 1.5rem;
-        width: 1.5rem;
-        border-radius: $border-radius;
-        @include flexMid;
-        color: white;
-        position: absolute;
-        left: -20px;
-        font-size: 14.182px;
-      }
-    }
-  }
+	margin: 2rem;
+	h2 {
+		padding-bottom: 1rem;
+	}
+	ol {
+		counter-reset: li; /* Initiate a counter */
+		margin: 0;
+		padding: 0;
+		li {
+			@include flexMid;
+			justify-content: flex-start;
+			flex-direction: row;
+			position: relative;
+			margin: 0 0 16px 2em;
+			padding: 1.3rem 1rem;
+			border-radius: $border-radius;
+			background: #f6f6f6;
+			box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+			&:before {
+				content: counter(li); /* Use the counter as content */
+				counter-increment: li; /* Increment the counter by 1 */
+				background: $color-primary;
+				height: 1.5rem;
+				width: 1.5rem;
+				border-radius: $border-radius;
+				@include flexMid;
+				color: white;
+				position: absolute;
+				left: -20px;
+				font-size: 14.182px;
+			}
+		}
+	}
 }
 .step__icon {
-  color: #7e7e7e;
+	color: #7e7e7e;
 }
 #restaurants {
-  padding: 2rem 1rem;
-  background-color: $color-neutre-bg;
-  @include flexMid;
-  align-items: stretch;
+	padding: 2rem 1rem;
+	background-color: $color-neutre-bg;
+	@include flexMid;
+	align-items: stretch;
 }
 .cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 2rem;
-  row-gap: 2rem;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	column-gap: 2rem;
+	row-gap: 2rem;
 }
 .card {
-  border-radius: $border-radius;
-  overflow: overlay;
-  background-color: white;
-  position: relative;
-  display: block;
-  &__img {
-    height: 12rem;
-    width: 100%;
-    object-fit: cover;
-  }
+	border-radius: $border-radius;
+	overflow: overlay;
+	background-color: white;
+	position: relative;
+	display: block;
+	&__img {
+		height: 12rem;
+		width: 100%;
+		object-fit: cover;
+	}
 
-  &__badge {
-    background-color: $color-tertiary;
-    color: darken($color-tertiary, 50%);
-    padding: 0.5rem;
-    border-radius:2px;
-    position: absolute;
-    top: 1rem;
-    right: 0.75rem;
-  }
+	&__badge {
+		background-color: $color-tertiary;
+		color: darken($color-tertiary, 50%);
+		padding: 0.5rem;
+		border-radius: 2px;
+		position: absolute;
+		top: 1rem;
+		right: 0.75rem;
+	}
 
-  &__footer {
-    padding: 1rem;
-    position: relative;
-    @include flexMid;
-	flex-direction: row;
+	&__footer {
+		padding: 1rem;
+		position: relative;
+		@include flexMid;
+		flex-direction: row;
+	}
 
-  }
+	&__content {
+		flex: 1;
+	}
 
-  &__content {
-    flex: 1;
-  }
-
-  &__title {
-    margin-bottom: 0.25rem;
-  }
+	&__title {
+		margin-bottom: 0.25rem;
+	}
+}
+.card__subtitle {
+	font-weight: lighter;
 }
 .card__btn {
-  width: 2rem;
-  i {
-    position: absolute;
-    top: 50%;
-    @include transform(translateY(-50%));
-  }
+	width: 2rem;
+	i {
+		position: absolute;
+		top: 50%;
+		@include transform(translateY(-50%));
+	}
 }
 .menu__like--bg {
-  color: transparent;
-  background-image: $gradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms;
-  &:hover {
-    opacity: 1;
-    @include transform(translateY(-50%) scale(1.05));
-  }
+	color: transparent;
+	background-image: $gradient;
+	background-clip: text;
+	-webkit-background-clip: text;
+	opacity: 0;
+	transition: all 200ms;
+	&:hover {
+		opacity: 1;
+		@include transform(translateY(-50%) scale(1.05));
+	}
 }
 footer {
-  background-color: $color-dark-grey;
-  @include flexMid;
-  padding: 22px 25px;
-  max-width: 1280px;
-  margin: auto;
-  position: relative;
-  color: white;
-  align-items: flex-start;
+	background-color: $color-dark-grey;
+	@include flexMid;
+	padding: 22px 25px;
+	max-width: 1280px;
+	margin: auto;
+	position: relative;
+	color: white;
+	align-items: flex-start;
 }
 .footer__logo {
-  font-family: $head-font;
-  margin: 0;
-  font-size: 18px;
+	@include head-font;
+	margin: 0;
+	font-size: 18px;
 }
 .footer__list {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 .footer__listElt {
-  margin: 0.5rem 0;
+	margin: 0.5rem 0;
 
-  &:first-child {
-    margin-top: 0;
-  }
+	&:first-child {
+		margin-top: 0;
+	}
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 .footer__link {
-  color: white;
-  text-decoration: none;
+	color: white;
+	text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+	&:hover {
+		text-decoration: underline;
+	}
 }
 .footer__icon {
-  width: 1.2rem;
-  margin-right: 0.5rem;
+	width: 1.2rem;
+	margin-right: 0.5rem;
 }
