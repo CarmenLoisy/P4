@@ -1,0 +1,134 @@
+.location {
+	@include flexMid;
+	flex-direction: row;
+	padding: 1.25rem 1rem;
+	background: $color-light-grey;
+	font-size: 1.2rem;
+	position: relative;
+	color: $color-dark-grey;
+	h3 {
+		font-weight: 500;
+	}
+}
+.hero {
+	padding: 2rem;
+	text-align: center;
+	background-color: $color-neutre-bg;
+	@include flexMid;
+	gap: 2rem;
+	span {
+		font-weight: 300;
+		font-size: 18px;
+	}
+}
+.steps {
+	margin: 2rem;
+	h2 {
+		padding-bottom: 1rem;
+	}
+	i {
+		color: #7e7e7e;
+	}
+}
+.step-by-step{
+	counter-reset: li; /* Initiate a counter */
+	margin: 0;
+	padding: 0;
+	li {
+		@include flexMid;
+		justify-content: flex-start;
+		flex-direction: row;
+		position: relative;
+		margin: 0 0 16px 2em;
+		padding: 1.3rem 1rem;
+		border-radius: $border-radius;
+		background: #f6f6f6;
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+		&:before {
+			content: counter(li); /* Use the counter as content */
+			counter-increment: li; /* Increment the counter by 1 */
+			background: $color-primary;
+			height: 1.5rem;
+			width: 1.5rem;
+			border-radius: $border-radius;
+			@include flexMid;
+			color: white;
+			position: absolute;
+			left: -20px;
+			font-size: 14.182px;
+		}
+	}
+}
+
+#restaurants {
+	padding: 2rem 1rem;
+	background-color: $color-neutre-bg;
+	@include flexMid;
+	align-items: stretch;
+}
+.cards_restaurants {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	column-gap: 2rem;
+	row-gap: 2rem;
+}
+.single_card {
+	border-radius: $border-radius;
+	overflow: overlay;
+	background-color: white;
+	position: relative;
+	display: block;
+	img {
+		height: 12rem;
+		width: 100%;
+		object-fit: cover;
+	}
+	.new {
+		background-color: $color-tertiary;
+		color: darken($color-tertiary, 50%);
+		padding: 0.5rem;
+		border-radius: 2px;
+		position: absolute;
+		top: 1rem;
+		right: 0.75rem;
+	}
+
+	&__footer {
+		padding: 1rem;
+		position: relative;
+		@include flexMid;
+		flex-direction: row;
+	}
+
+	&__content {
+		flex: 1;
+	}
+
+	h3 {
+		margin-bottom: 0.25rem;
+	}
+	span{
+		font-weight: lighter;
+	}
+}
+
+.card__btn {
+	width: 2rem;
+	i {
+		position: absolute;
+		top: 50%;
+		@include transform(translateY(-50%));
+	}
+}
+.fa-heart.fas {
+	color: transparent;
+	background-image: $gradient;
+	background-clip: text;
+	-webkit-background-clip: text;
+	opacity: 0;
+	transition: all 200ms;
+	&:hover {
+		opacity: 1;
+		@include transform(translateY(-50%) scale(1.05));
+	}
+}

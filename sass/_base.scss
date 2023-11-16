@@ -1,3 +1,6 @@
+*, ::before, ::after{
+	box-sizing: border-box;
+}
 body,
 html {
   margin: 0;
@@ -16,4 +19,59 @@ a {
 li,
 ul {
   list-style: none;
+}
+header {
+	padding: 1rem;
+	box-shadow: $shadow;
+	position: relative;
+	z-index: 1000;
+	h1 {
+		@include head-font;
+		text-align: center;
+	}
+}
+.btn {
+	@include btn-cta;
+}
+footer {
+	background-color: $color-dark-grey;
+	@include flexMid;
+	padding: 22px 25px;
+	max-width: 1280px;
+	margin: auto;
+	position: relative;
+	color: white;
+	align-items: flex-start;
+	.footer__logo {
+		@include head-font;
+		margin: 0;
+		font-size: 18px;
+	}
+}
+.footer__list {
+	padding: 0;
+	margin: 0;
+	i {
+		width: 1.2rem;
+		margin-right: 0.5rem;
+	}
+}
+.footer__listElt {
+	margin: 0.5rem 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+.footer__link {
+	color: white;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }

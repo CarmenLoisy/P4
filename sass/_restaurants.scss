@@ -25,8 +25,7 @@ main.menu_container{
 }
 
 .heroImg {
-	max-width: 100%;
-	max-height: 32rem;
+	max-height: 17rem;
 	width: 100%;
 	object-fit: cover;
 }
@@ -37,12 +36,13 @@ main.menu_container{
 	background-color: $color-neutre-bg;
 	z-index: 1;
 	position: relative;
-	padding: 1rem;
+	padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
 }
 .menu__title{
 	@include head-font;
+	letter-spacing: 0.05rem;
 }
 
 .submenus {

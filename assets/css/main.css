@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
@@ -20,6 +24,250 @@ a {
 li,
 ul {
   list-style: none;
+}
+
+header {
+  padding: 1rem;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1000;
+}
+header h1 {
+  font-family: "Shrikhand", cursive, sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+.btn {
+  width: 13rem;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1.5625rem;
+  color: #fff;
+  background-image: linear-gradient(0deg, #9356dc, #ff79da);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background-color: #353535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 22px 25px;
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+  color: white;
+  align-items: flex-start;
+}
+footer .footer__logo {
+  font-family: "Shrikhand", cursive, sans-serif;
+  font-weight: 100;
+  margin: 0;
+  font-size: 18px;
+}
+
+.footer__list {
+  padding: 0;
+  margin: 0;
+}
+.footer__list i {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.footer__listElt {
+  margin: 0.5rem 0;
+}
+.footer__listElt:first-child {
+  margin-top: 0;
+}
+.footer__listElt:last-child {
+  margin-bottom: 0;
+}
+
+.footer__link {
+  color: white;
+  text-decoration: none;
+}
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  flex-direction: row;
+  padding: 1.25rem 1rem;
+  background: #eaeaea;
+  font-size: 1.2rem;
+  position: relative;
+  color: #353535;
+}
+.location h3 {
+  font-weight: 500;
+}
+
+.hero {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  gap: 2rem;
+}
+.hero span {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.steps {
+  margin: 2rem;
+}
+.steps h2 {
+  padding-bottom: 1rem;
+}
+.steps i {
+  color: #7e7e7e;
+}
+
+.step-by-step {
+  counter-reset: li; /* Initiate a counter */
+  margin: 0;
+  padding: 0;
+}
+.step-by-step li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+  flex-direction: row;
+  position: relative;
+  margin: 0 0 16px 2em;
+  padding: 1.3rem 1rem;
+  border-radius: 1.5625rem;
+  background: #f6f6f6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.step-by-step li:before {
+  content: counter(li); /* Use the counter as content */
+  counter-increment: li; /* Increment the counter by 1 */
+  background: #9356dc;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 1.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  position: absolute;
+  left: -20px;
+  font-size: 14.182px;
+}
+
+#restaurants {
+  padding: 2rem 1rem;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  align-items: stretch;
+}
+
+.cards_restaurants {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.single_card {
+  border-radius: 1.5625rem;
+  overflow: overlay;
+  background-color: white;
+  position: relative;
+  display: block;
+}
+.single_card img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+.single_card .new {
+  background-color: #99e2d0;
+  color: #1b6150;
+  padding: 0.5rem;
+  border-radius: 2px;
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+}
+.single_card__footer {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  flex-direction: row;
+}
+.single_card__content {
+  flex: 1;
+}
+.single_card h3 {
+  margin-bottom: 0.25rem;
+}
+.single_card span {
+  font-weight: lighter;
+}
+
+.card__btn {
+  width: 2rem;
+}
+.card__btn i {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.fa-heart.fas {
+  color: transparent;
+  background-image: linear-gradient(0deg, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms;
+}
+.fa-heart.fas:hover {
+  opacity: 1;
+  -ms-transform: translateY(-50%) scale(1.05);
+  -webkit-transform: translateY(-50%) scale(1.05);
+  -o-transform: translateY(-50%) scale(1.05);
+  -moz-transform: translateY(-50%) scale(1.05);
+  transform: translateY(-50%) scale(1.05);
 }
 
 main.menu_container {
@@ -46,8 +294,7 @@ main.menu_container {
 }
 
 .heroImg {
-  max-width: 100%;
-  max-height: 32rem;
+  max-height: 17rem;
   width: 100%;
   object-fit: cover;
 }
@@ -58,7 +305,7 @@ main.menu_container {
   background-color: #f6f6f6;
   z-index: 1;
   position: relative;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -66,6 +313,7 @@ main.menu_container {
 .menu__title {
   font-family: "Shrikhand", cursive, sans-serif;
   font-weight: 100;
+  letter-spacing: 0.05rem;
 }
 
 .submenus {
@@ -184,287 +432,4 @@ main.menu_container {
   display: flex;
   padding-bottom: 2.5rem;
   justify-content: center;
-}
-
-@keyframes itemAppear {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes loader {
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
-}
-@keyframes jump {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(0.5rem);
-  }
-  75% {
-    transform: translateY(-0.5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-header {
-  padding: 1rem;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  position: relative;
-  z-index: 1000;
-}
-header h1 {
-  font-family: "Shrikhand", cursive, sans-serif;
-  font-weight: 100;
-  text-align: center;
-}
-
-.location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  flex-direction: row;
-  padding: 1.25rem 1rem;
-  background: #eaeaea;
-  font-size: 1.2rem;
-  position: relative;
-  color: #353535;
-}
-.location h3 {
-  font-weight: 500;
-}
-
-.hero {
-  padding: 2rem;
-  text-align: center;
-  background-color: #f6f6f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  gap: 2rem;
-}
-.hero span {
-  font-weight: 300;
-  margin: 1.5rem 0;
-  color: #353535;
-  text-align: center;
-  font-size: 18px;
-}
-
-.btn {
-  width: 11.625rem;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 1.5625rem;
-  color: #fff;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  transition: all 0.25s;
-}
-.btn:hover {
-  -ms-transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-.steps {
-  margin: 2rem;
-}
-.steps h2 {
-  padding-bottom: 1rem;
-}
-.steps ol {
-  counter-reset: li; /* Initiate a counter */
-  margin: 0;
-  padding: 0;
-}
-.steps ol li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: flex-start;
-  flex-direction: row;
-  position: relative;
-  margin: 0 0 16px 2em;
-  padding: 1.3rem 1rem;
-  border-radius: 1.5625rem;
-  background: #f6f6f6;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-}
-.steps ol li:before {
-  content: counter(li); /* Use the counter as content */
-  counter-increment: li; /* Increment the counter by 1 */
-  background: #9356dc;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 1.5625rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  color: white;
-  position: absolute;
-  left: -20px;
-  font-size: 14.182px;
-}
-
-.step__icon {
-  color: #7e7e7e;
-}
-
-#restaurants {
-  padding: 2rem 1rem;
-  background-color: #f6f6f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  align-items: stretch;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 2rem;
-  row-gap: 2rem;
-}
-
-.card {
-  border-radius: 1.5625rem;
-  overflow: overlay;
-  background-color: white;
-  position: relative;
-  display: block;
-}
-.card__img {
-  height: 12rem;
-  width: 100%;
-  object-fit: cover;
-}
-.card__badge {
-  background-color: #99e2d0;
-  color: #1b6150;
-  padding: 0.5rem;
-  border-radius: 2px;
-  position: absolute;
-  top: 1rem;
-  right: 0.75rem;
-}
-.card__footer {
-  padding: 1rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  flex-direction: row;
-}
-.card__content {
-  flex: 1;
-}
-.card__title {
-  margin-bottom: 0.25rem;
-}
-
-.card__subtitle {
-  font-weight: lighter;
-}
-
-.card__btn {
-  width: 2rem;
-}
-.card__btn i {
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.menu__like--bg {
-  color: transparent;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms;
-}
-.menu__like--bg:hover {
-  opacity: 1;
-  -ms-transform: translateY(-50%) scale(1.05);
-  -webkit-transform: translateY(-50%) scale(1.05);
-  -o-transform: translateY(-50%) scale(1.05);
-  -moz-transform: translateY(-50%) scale(1.05);
-  transform: translateY(-50%) scale(1.05);
-}
-
-footer {
-  background-color: #353535;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  padding: 22px 25px;
-  max-width: 1280px;
-  margin: auto;
-  position: relative;
-  color: white;
-  align-items: flex-start;
-}
-
-.footer__logo {
-  font-family: "Shrikhand", cursive, sans-serif;
-  font-weight: 100;
-  margin: 0;
-  font-size: 18px;
-}
-
-.footer__list {
-  padding: 0;
-  margin: 0;
-}
-
-.footer__listElt {
-  margin: 0.5rem 0;
-}
-.footer__listElt:first-child {
-  margin-top: 0;
-}
-.footer__listElt:last-child {
-  margin-bottom: 0;
-}
-
-.footer__link {
-  color: white;
-  text-decoration: none;
-}
-.footer__link:hover {
-  text-decoration: underline;
-}
-
-.footer__icon {
-  width: 1.2rem;
-  margin-right: 0.5rem;
 }/*# sourceMappingURL=main.css.map */
