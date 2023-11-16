@@ -1,0 +1,22 @@
+%flexMid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} //@extend %flexMid;
+%head-font{
+	font-family: "Shrikhand", cursive, sans-serif;
+	font-weight:100;
+}//@extend %head-font;
+%btn-cta{
+	width: 13rem;
+    text-align: center;
+    padding: 1rem;
+	border-radius: $border-radius;
+	color: #fff;
+	background-image: $gradient;
+	box-shadow: $shadow;
+	transition: all 0.25s;
+	&:hover {
+		opacity: 0.9;
+	}
+}//@extend %btn-cta;

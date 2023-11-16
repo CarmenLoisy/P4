@@ -4,30 +4,34 @@
   -o-transform: $transform;
   -moz-transform: $transform;
   transform: $transform;
-} //.btn {
-//    @include transform(rotate(10deg));
-//}
-@mixin flexMid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-} //@include flexMid;
-@mixin head-font{
-	font-family: "Shrikhand", cursive, sans-serif;
-	font-weight:100;
-}//@include head-font;
-@mixin btn-cta{
-	width: 13rem;
-    text-align: center;
-    padding: 1rem;
-	border-radius: $border-radius;
-	color: #fff;
-	background-image: $gradient;
-	box-shadow: $shadow;
-	transition: all 0.25s;
-	&:hover {
-		opacity: 0.9;
-	}
-}//@include btn-cta;
+} 
+@mixin absolute-el ($top, $right, $botton, $left, $x, $y) {	
+position: absolute;
+top: $top;
+right: $right;
+bottom: $botton;
+left: $left;
+transform: translate($x,$y);
+}
+@mixin psseudo-el($display:block, $pos:absolute, $content:''){
+content: $content;
+display: $display;
+position: $pos;
+}
+
+@mixin flexMid (
+	$display-fle:flex, 
+	$justify-cont:center,
+	$align-i:center,
+	$flex-dir:column,
+	$gap:15px){ 
+		display: $display-fle;
+		justify-content: $justify-center;
+		align-items: $align-i;
+		flex-direction: $flex-dir;
+		gap:$gap;
+  }//@include flexMid($flex-dir:row);
+  //@include flexMid($gap:2rem);
+  //@include flexMid($flex-dir:row, $justify-cont:flex-start);
+//@include flexMid($align-i:stretch);
+//@include flexMid($align-i:flex-start);

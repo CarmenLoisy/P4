@@ -26,24 +26,23 @@ header {
 	position: relative;
 	z-index: 1000;
 	h1 {
-		@include head-font;
+		@extend %head-font;
 		text-align: center;
 	}
 }
 .btn {
-	@include btn-cta;
+	@extend %btn-cta;
 }
 footer {
 	background-color: $color-dark-grey;
-	@include flexMid;
+	@include flexMid($align-i:flex-start);
 	padding: 22px 25px;
 	max-width: 1280px;
 	margin: auto;
 	position: relative;
 	color: white;
-	align-items: flex-start;
 	.footer__logo {
-		@include head-font;
+		@extend %head-font;
 		margin: 0;
 		font-size: 18px;
 	}

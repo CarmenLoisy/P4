@@ -1,7 +1,6 @@
 main.menu_container{
-	display: flex;
-    flex-direction: column;
-    gap: 15px;
+	@extend %flexMid;
+	//@include flexMid($align-i:stretch);
 }
 
 .header {
@@ -15,9 +14,7 @@ main.menu_container{
 		height: 2rem;
 		width: 2rem;
 		top: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@extend %flexMid;
 		transform: translateY(-50%);
 		font-size: 1.2rem;
 		color: black;
@@ -41,7 +38,7 @@ main.menu_container{
     justify-content: space-between;
 }
 .menu__title{
-	@include head-font;
+	@extend %head-font;
 	letter-spacing: 0.05rem;
 }
 
@@ -133,18 +130,14 @@ main.menu_container{
 	background-color: $color-tertiary;
 	margin: -1rem -4rem -1rem 1rem;
 	width: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@extend %flexMid;
 	transition-duration: 0.5s;
 }
 .menuItem__wrapIcon {
 	height: 1.6rem;
 	width: 1.6rem;
 	background-color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@extend %flexMid;
 	border-radius: 100px;
 	transform: rotate(180deg);
 	transition-duration: 0.5s;
@@ -155,5 +148,5 @@ main.menu_container{
 .order_button {
     display: flex;
     padding-bottom: 2.5rem;
-    justify-content: center;
+	@include flexMid($justify-cont:center);
 }
