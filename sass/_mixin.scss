@@ -26,7 +26,7 @@ position: $pos;
 	$flex-dir:column,
 	$gap:15px){ 
 		display: $display-fle;
-		justify-content: $justify-center;
+		justify-content: $justify-cont;
 		align-items: $align-i;
 		flex-direction: $flex-dir;
 		gap:$gap;

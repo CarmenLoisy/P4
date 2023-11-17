@@ -37,7 +37,6 @@ footer {
 	background-color: $color-dark-grey;
 	@include flexMid($align-i:flex-start);
 	padding: 22px 25px;
-	max-width: 1280px;
 	margin: auto;
 	position: relative;
 	color: white;
@@ -50,22 +49,25 @@ footer {
 .footer__list {
 	padding: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+    gap: 15px;
 	i {
 		width: 1.2rem;
 		margin-right: 0.5rem;
 	}
 }
-.footer__listElt {
-	margin: 0.5rem 0;
+// .footer__listElt {
+// 	//margin: 0.5rem 0;
 
-	&:first-child {
-		margin-top: 0;
-	}
+// 	&:first-child {
+// 		//margin-top: 0;
+// 	}
 
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
+// 	&:last-child {
+// 		margin-bottom: 0;
+// 	}
+// }
 .footer__link {
 	color: white;
 	text-decoration: none;
