@@ -1,3 +1,16 @@
+.loader {
+	position: fixed;
+	@extend %flexMid;
+	background-color: $color-neutre-bg;
+	color: $color-primary;
+	height: 100vh;
+	inset: 0;
+	z-index: 10;
+	opacity: 0.9;
+	animation: loader 1s  5s forwards;
+	transform-origin: top;
+}
+
 .location {
 	@include flexMid($flex-dir: row);
 	padding: 1.25rem 1rem;
@@ -71,7 +84,7 @@
 }
 .single_card {
 	border-radius: $border-radius;
-	overflow: overlay;
+	overflow: hidden;
 	background-color: white;
 	position: relative;
 	display: block;
