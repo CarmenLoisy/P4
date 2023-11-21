@@ -84,7 +84,7 @@
 	&:hover .menuItem__wrapIcon {
 		transform: rotate(0);
 	}
-	@for $i from 2 through 4{
+	@for $i from 2 through 5{
 		&:nth-child(#{$i}){
 			animation-delay: .5s*$i;
 		}
@@ -95,8 +95,6 @@
 
 
 .menuItem__header {
-	white-space: nowrap;
-	text-overflow: ellipsis;
 	overflow: hidden;
 	flex: 1;
 	h4 {
@@ -105,6 +103,11 @@
 	p {
 		font-weight: 300;
 		font-size: 14px;
+	}
+	> * {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
