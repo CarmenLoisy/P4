@@ -357,6 +357,11 @@ footer .footer__logo {
   color: black;
 }
 
+.main_resto {
+  display: block;
+  width: 95%;
+}
+
 .heroImg {
   max-height: 17rem;
   width: 100%;
@@ -379,13 +384,12 @@ footer .footer__logo {
 }
 
 .submenus {
-  margin: 2rem 1rem;
+  margin: 1rem 0rem;
   display: grid;
   gap: 2rem;
 }
 
 .submenu {
-  max-width: 100%;
   overflow: hidden;
   padding: 0 1rem;
 }
@@ -415,7 +419,6 @@ footer .footer__logo {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   cursor: pointer;
-  max-width: 100%;
   animation: appear 1s;
   animation-fill-mode: both;
 }
@@ -510,14 +513,16 @@ footer .footer__logo {
 /****** Media queries ***********/
 /* Small devices (phones, more than 600px) */
 @media (min-width: 425px) {
-  .main_resto {
-    display: flex;
-    flex-direction: column;
-  }
   .menu_container {
     min-width: 80%;
     background-color: #f6f6f6;
     align-self: center;
+  }
+}
+@media (min-width: 768px) {
+  .main_resto {
+    display: flex;
+    flex-direction: column;
   }
 }
 /* Medium devices (tablets, more/equal than 1024px) */
